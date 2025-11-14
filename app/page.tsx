@@ -1,6 +1,6 @@
 'use client';
 
-import { Container, Paper, Button, Typography, Box, Grid } from '@mui/material';
+import { Container, Paper, Button, Typography, Box } from '@mui/material';
 import {
   Add as AddIcon,
   List as ListIcon,
@@ -37,34 +37,30 @@ export default function Home() {
           </Typography>
         </Box>
 
-        <Grid container spacing={2} sx={{ mt: 2 }}>
-          <Grid item xs={12}>
-            <Button
-              component={Link}
-              href="/add"
-              variant="contained"
-              fullWidth
-              size="large"
-              startIcon={<AddIcon />}
-              sx={{ py: 1.5 }}
-            >
-              添加验房问题
-            </Button>
-          </Grid>
-          <Grid item xs={12}>
-            <Button
-              component={Link}
-              href="/view"
-              variant="outlined"
-              fullWidth
-              size="large"
-              startIcon={<ListIcon />}
-              sx={{ py: 1.5 }}
-            >
-              查看问题列表
-            </Button>
-          </Grid>
-        </Grid>
+        <Box sx={{ display: 'flex', flexDirection: 'column', gap: 2, mt: 2 }}>
+          <Button
+            component={Link}
+            href="/add"
+            variant="contained"
+            fullWidth
+            size="large"
+            startIcon={<AddIcon />}
+            sx={{ py: 1.5 }}
+          >
+            添加验房问题
+          </Button>
+          <Button
+            component={Link}
+            href="/view"
+            variant="outlined"
+            fullWidth
+            size="large"
+            startIcon={<ListIcon />}
+            sx={{ py: 1.5 }}
+          >
+            查看问题列表
+          </Button>
+        </Box>
       </Paper>
     </Container>
   );

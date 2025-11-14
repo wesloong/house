@@ -12,7 +12,6 @@ import {
   Card,
   CardContent,
   CardMedia,
-  Grid,
   Chip,
   Dialog,
   DialogContent,
@@ -334,9 +333,9 @@ export default function ViewPage() {
           </Button>
         </Paper>
       ) : (
-        <Grid container spacing={{ xs: 2, sm: 3 }}>
+        <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: { xs: 2, sm: 3 } }}>
           {problems.map((problem) => (
-            <Grid item xs={12} sm={6} md={4} key={problem.id}>
+            <Box key={problem.id} sx={{ width: { xs: '100%', sm: 'calc(50% - 12px)', md: 'calc(33.333% - 16px)' } }}>
               <Card sx={{ height: '100%', display: 'flex', flexDirection: 'column', overflow: 'hidden' }}>
                   {problem.images.length > 0 && (
                   <Box
@@ -506,9 +505,9 @@ export default function ViewPage() {
                   )}
                 </CardContent>
               </Card>
-            </Grid>
+            </Box>
           ))}
-        </Grid>
+        </Box>
       )}
 
       {/* 图片预览对话框 */}

@@ -9,7 +9,6 @@ import {
   Typography,
   Box,
   IconButton,
-  Grid,
   Alert,
   CircularProgress,
   RadioGroup,
@@ -277,9 +276,9 @@ export default function AddPage() {
             </label>
 
             {images.length > 0 && (
-              <Grid container spacing={2} sx={{ mt: 2 }}>
+              <Box sx={{ display: 'flex', flexWrap: 'wrap', gap: 2, mt: 2 }}>
                 {images.map((img, index) => (
-                  <Grid item xs={6} sm={4} key={index}>
+                  <Box key={index} sx={{ width: { xs: 'calc(50% - 8px)', sm: 'calc(33.333% - 16px)' } }}>
                     <Box
                       sx={{
                         position: 'relative',
@@ -318,9 +317,9 @@ export default function AddPage() {
                         <DeleteIcon fontSize="small" />
                       </IconButton>
                     </Box>
-                  </Grid>
+                  </Box>
                 ))}
-              </Grid>
+              </Box>
             )}
           </Box>
 
